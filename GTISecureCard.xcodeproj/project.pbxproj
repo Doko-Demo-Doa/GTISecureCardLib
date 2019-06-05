@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		EDE70414227C5B4A0043F0F8 /* GTISecureCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE70413227C5B4A0043F0F8 /* GTISecureCard.m */; };
 		EDE70415227C5B4A0043F0F8 /* GTISecureCard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EDE70412227C5B4A0043F0F8 /* GTISecureCard.h */; };
+		EDE7041F227C64A60043F0F8 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE7041C227C64A40043F0F8 /* libcrypto.a */; };
+		EDE70420227C64A60043F0F8 /* GTTknP11.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE7041D227C64A50043F0F8 /* GTTknP11.framework */; };
+		EDE70421227C64A60043F0F8 /* libGTTknP11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE7041E227C64A60043F0F8 /* libGTTknP11.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,9 @@
 		EDE7040F227C5B4A0043F0F8 /* libGTISecureCard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGTISecureCard.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE70412227C5B4A0043F0F8 /* GTISecureCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTISecureCard.h; sourceTree = "<group>"; };
 		EDE70413227C5B4A0043F0F8 /* GTISecureCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTISecureCard.m; sourceTree = "<group>"; };
+		EDE7041C227C64A40043F0F8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		EDE7041D227C64A50043F0F8 /* GTTknP11.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTTknP11.framework; sourceTree = "<group>"; };
+		EDE7041E227C64A60043F0F8 /* libGTTknP11.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGTTknP11.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE70421227C64A60043F0F8 /* libGTTknP11.a in Frameworks */,
+				EDE70420227C64A60043F0F8 /* GTTknP11.framework in Frameworks */,
+				EDE7041F227C64A60043F0F8 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 		EDE70406227C5B4A0043F0F8 = {
 			isa = PBXGroup;
 			children = (
+				EDE7041B227C64970043F0F8 /* Frameworks */,
 				EDE70411227C5B4A0043F0F8 /* GTISecureCard */,
 				EDE70410227C5B4A0043F0F8 /* Products */,
 			);
@@ -64,6 +74,16 @@
 				EDE70413227C5B4A0043F0F8 /* GTISecureCard.m */,
 			);
 			path = GTISecureCard;
+			sourceTree = "<group>";
+		};
+		EDE7041B227C64970043F0F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDE7041D227C64A50043F0F8 /* GTTknP11.framework */,
+				EDE7041C227C64A40043F0F8 /* libcrypto.a */,
+				EDE7041E227C64A60043F0F8 /* libGTTknP11.a */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +200,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -233,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -245,6 +265,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -256,6 +284,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

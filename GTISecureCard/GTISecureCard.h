@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GTTknP11/GTICREvent.h>
 
-@interface GTISecureCard : NSObject
+@interface GTISecureCard : NSObject<GTICREventDelegate> {
+    GTICREvent *readerEvent;
+}
+
+- (void) initDevice;
 
 @end
